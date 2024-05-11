@@ -1,5 +1,5 @@
 import React from "react";
-import Style from "./InvoiceLists.module.scss";
+import Style from "../scss/InvoiceLists.module.scss";
 import { useGlobalContext } from "../context/AppContext";
 export default function InvoiceLists() {
   const { data } = useGlobalContext();

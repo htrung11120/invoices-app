@@ -4,6 +4,7 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [data, setData] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -22,7 +23,11 @@ export const AppProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  return <AppContext.Provider value={{ data }}>{children}</AppContext.Provider>;
+  const contextValue = { data, darkMode, setDarkMode };
+
+  return (
+    <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>
+  );
 };
 
 export const useGlobalContext = () => useContext(AppContext);
