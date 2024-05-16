@@ -5,7 +5,7 @@ export default function Invoices() {
   return (
     <div className={Style.container}>
       <SideBar />
-      <Outlet />
+      <Outlet className={Style.outlet} />
     </div>
   );
 }
